@@ -3,7 +3,7 @@ y<-read.csv(file="coursePacks.csv",header=TRUE)
 
 a = unlist(list(y$Package))
 
-for (i in length(y[,1])){
+for (i in 1:length(a)){
   testPackage=as.character(a[i])
   if (!(testPackage %in% rownames(installed.packages())))
     install.packages(testPackage)
