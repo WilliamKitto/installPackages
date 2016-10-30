@@ -3,7 +3,7 @@ y<-read.csv(file="coursePacks.csv",header=TRUE)
 
 a = unlist(list(y$Package))
 
-for (i in length(y)){
+for (i in 1:length(a)){
   testPackage=as.character(a[i])
   if (!(testPackage %in% rownames(installed.packages())))
     install.packages(testPackage)
@@ -11,3 +11,4 @@ for (i in length(y)){
 
 #let user decide to update or not...
 update.packages()
+
